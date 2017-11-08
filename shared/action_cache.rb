@@ -1,3 +1,15 @@
+# Usage from controller action:
+#
+# return_object = ActionCache.new(self).cache_request do
+#   ... code here
+#
+#   {
+#     object to cache here
+#   }
+# end
+#
+# render json: return_object
+#
 class ActionCache
   def initialize(controller)
     @controller = controller

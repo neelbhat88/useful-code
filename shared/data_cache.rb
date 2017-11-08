@@ -1,10 +1,16 @@
+# Usage from controller action:
+#
+# return_object = DataCache.new("base_key").cache_request(params) do
+#   ... code here
+#
+#   {
+#     object to cache here
+#   }
+# end
+#
+# render json: return_object
+#
 class DataCache
-  RELEVANT_JOBS = "relevant-jobs".freeze
-  BENCHMARK_DATA = "benchmark-data".freeze
-  BENCHMARK_TOP_COMPANIES = "benchmark-top-companies".freeze
-  BENCHMARK_TOP_POSITIONS = "benchmark-top-positions".freeze
-  COMPANY_INFO = "company-info-overview".freeze
-
   def initialize(cache_key_base=nil)
     @cache_key_base = cache_key_base
   end

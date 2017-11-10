@@ -1,7 +1,5 @@
-# TODO:
-# => 1. ARRAY_AGG returns SQL style array, convert this to ruby array
-# =>  i.e. [{"company_id"=>5439, "question_ids"=>"{2,3}"}] when running
-# =>  Answer.select("company_list_id as company_id", "ARRAY_AGG(DISTINCT question_id) as question_ids").where(user_id: @user.id).group(:company_list_id)
+# Turns out `.as_json` does exactly what I was trying to do here.
+# Oh well, at least this was fun to build
 class SqlQuerier
   def initialize(klass)
     @klass = klass

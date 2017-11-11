@@ -1,5 +1,10 @@
 # Turns out `.as_json` does exactly what I was trying to do here.
 # Oh well, at least this was fun to build
+# UPDATE: Actually, maybe this is not the end of SqlQuerier. `.as_json` is great BUT
+#  in some cases can have very poor performance and use a lot of memory.
+#  See https://www.evernote.com/l/AK407smcktFD0YXkRz1JUPEjLJJzRC4b0zU
+# UPDATE 2: I did find a much better way to do this though by just adding a method to
+#  ActiveRecord::Base and taking advantage of its `.to_sql` method. See lib/skillet.rb
 class SqlQuerier
   def initialize(klass)
     @klass = klass
